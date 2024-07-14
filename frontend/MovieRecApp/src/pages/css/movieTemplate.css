@@ -201,3 +201,12 @@
 .cancelDeleteButton:hover {
     background-color: #0056b3;
 }
+
+
+.AddCircleIcon{
+    color: #007bff;
+    transition: ease-in 0.9s;
+}
+.AddCircleIcon:hover{
+    transform: scale(1.2);
+}

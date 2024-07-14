@@ -13,22 +13,28 @@ function getMovieRecomandation () {
     const [MovieGenre, setMovieGenre] = useState([])
     const [moviesName, setMoviesName] = useState([]);
     const [moviesImg, setMoviesImg] = useState([])
-
+    const [movieIDArrayForTemplate, setMovieIDArrayForTemplate] = useState([])
+    const [noMoreRecomondations , setNoMoreRecomondations] = useState(false)
     const getMovies  = async () => {
         try{
             let moviesArrayName = []
             let movieDate = []
             let movieDescription =[]
             let movieGenre =[]
+            let movieID = []
             const res = await api.get("GetRecomendation/")
             for(let i =0; i<res.data.length;i++){
+                movieID.push(res.data[i].id)
                 moviesArrayName.push(res.data[i].name); 
                 movieDate.push(res.data[i].date)
                 movieDescription.push(res.data[i].description)
                 movieGenre.push(res.data[i].genere)
             }
-            
+            if(res.data.length ==0){
+                setNoMoreRecomondations(true)
+            }
             console.log(res)
+            setMovieIDArrayForTemplate(movieID)
             setMovieDate(movieDate)
             setMovieDescription(movieDescription)
             setMovieGenre(movieGenre)
@@ -73,6 +79,9 @@ function getMovieRecomandation () {
     };
 
 
+     
+
+
 
 
 
@@ -83,6 +92,11 @@ function getMovieRecomandation () {
                     <h1 className="title">Get New Moive Recomandation!</h1>
                     <Button onClick={getMovies}>Get Recomandation</Button>
                 </div>
+                {noMoreRecomondations && (
+                    <div style={{paddingTop: '20px'}}>
+                        No More Recomondations. Please update your moive library for new recomandations.
+                    </div>
+                )}
                 <div className="movieList">
                     {moviesName.map((movie, index) => (
                         <MovieTemplate
@@ -92,7 +106,8 @@ function getMovieRecomandation () {
                             Date_Relesaed = {MovieDate[index]}
                             description = {MovieDescription[index]}
                             genre = {MovieGenre[index]}
-                            // id = {movieIDArrayForTemplate[index]}
+                            isRecomondMovie = {true}
+                            id = {movieIDArrayForTemplate[index]}
                             
                         />))}
                 </div>
