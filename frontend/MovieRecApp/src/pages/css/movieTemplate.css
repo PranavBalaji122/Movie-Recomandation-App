@@ -1,0 +1,203 @@
+.movieTemplateContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 200px;
+    padding: 10px;
+    min-height: 380px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movieTemplateContainer.deleteMode{
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.reactiveDiv {
+    position: relative;
+    transition: 0.2s ease;
+    height: 100%;
+}
+
+.reactiveDiv:hover {
+    transform: scale(1.05);
+}
+
+.movieImageClass {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+
+    border-radius: 10px;
+}
+.deleteIcon{
+    color:#C70000;
+    transform: scale(1.3);
+}
+
+.movieName {
+    text-align: center;
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.movieImageClassPopUp {
+    width: 300px;
+    height: auto;
+}
+
+.popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    width: 800px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    z-index: 1010;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.popup img {
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.popup h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin: 5px 0;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    flex: 1;
+    text-align: left;
+}
+
+.content h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.content span {
+    margin-bottom: 1rem;
+}
+
+
+.trashPopupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trashPopup {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.trashPopupContent {
+    width: 100%;
+}
+
+.trashPopupButtons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.confirmDeleteButton {
+    padding: 10px 20px;
+    background-color: #C70000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.confirmDeleteButton:hover {
+    background-color: #a50000;
+}
+
+.cancelDeleteButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cancelDeleteButton:hover {
+    background-color: #0056b3;
+}

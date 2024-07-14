@@ -1,0 +1,149 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.navBarMainContianer{
+display: flex;
+}
+.navBarContainer {
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+}
+
+.navBarHidden,
+.navBarShown {
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  transition: width 0.3s ease-in-out, background-color 0.3s;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.navBarHidden {
+  width: 80px;
+}
+
+.navBarShown {
+  width: 240px;
+}
+
+.menuIconHamburgerButton,
+.menuIconHamburgerButtonClicked {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #0d74f5;
+  transition: transform 0.3s ease;
+  margin-bottom: 3rem; 
+  transform: scale(1.6);
+}
+
+.menuIconHamburgerButtonClicked {
+  margin-top: 1rem;
+  transform: scale(1.6) rotate(90deg);
+
+}
+
+.menuIconDiv {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+.menuIconDivHidden{
+  display: flex;
+  
+}
+
+.menuIconDiv img {
+  width: 200px;
+  height: auto;
+  margin-left:-3rem ; 
+  margin-top: -3rem;
+}
+
+.navlinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navlinks li {
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.navlinks li a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.navlinks li a:hover {
+  /* background-color: #0d74f5; */
+  background-color: #334f8c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.iconsForNavBar {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.navlinks li a p {
+  margin: 0;
+  display: none;
+}
+
+.navBarShown .navlinks li a p {
+  display: block;
+}
+.profileView{
+  position: absolute;
+  bottom: 7%;
+  align-items: center;
+  display: flex;
+  margin-bottom: .5rem;
+  margin-left: .6rem;
+}
+.profileView a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profileView a p {
+  margin-left: 15px; 
+}
+.profileView:hover{
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: #e2e2e2;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebarBottomSpace {
+  height: 50px; 
+  background-color: #fff;
+}
+.contentContainer {
+  margin-left: 270px;
+  padding: 20px;
+  flex-grow: 1;
+}
