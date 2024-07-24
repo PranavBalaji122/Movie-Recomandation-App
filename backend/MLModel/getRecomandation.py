@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 
 df = pd.read_csv('/Users/pranavbalaji/Documents/Personal CS Projects/Movie Recomandation App/backend/data/movies4.csv')
@@ -33,3 +34,20 @@ def get_recommendations(watched_movies, cosine_sim=cosine_sim):
 watched_movies = ['Inception', 'Interstellar']  
 recommendations = get_recommendations(watched_movies)
 print(recommendations)
+
+
+
+
+ground_truth = ['The Matrix', 'Inception', 'The Dark Knight', 'Interstellar', 'Avatar']
+recommended_movies = recommendations.tolist()
+y_true = [1 if movie in ground_truth else 0 for movie in df['title']]
+y_pred = [1 if movie in recommended_movies else 0 for movie in df['title']]
+
+# Precision, Recall, and F1 Score
+precision = precision_score(y_true, y_pred, average='binary')
+recall = recall_score(y_true, y_pred, average='binary')
+f1 = f1_score(y_true, y_pred, average='binary')
+
+print(f'Precision: {precision}')
+print(f'Recall: {recall}')
+print(f'F1 Score: {f1}')
